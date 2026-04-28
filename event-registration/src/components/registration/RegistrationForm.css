@@ -1,0 +1,214 @@
+/* --- RESET & WRAPPER --- */
+.registration-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #05070a;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background: #0d1117;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+/* --- THE NEON BORDER ANIMATION (FIXED) --- */
+.form-card::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: conic-gradient(from 0deg, transparent, #00ffff, transparent, #00ffff, transparent);
+  z-index: -1;
+  animation: rotate 4s linear infinite;
+  border-radius: 22px;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+/* --- TITLE ANIMATION --- */
+.form-title {
+  color: #00ffff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  animation: titlePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes titlePulse {
+  from { opacity: 0.8; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- FORM LAYOUT (GRID) --- */
+.actual-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 20px;
+}
+
+/* Make full name take full width */
+.input-row:first-child {
+  grid-template-columns: 1fr;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  color: #00ffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-group input, .input-group select {
+  width: 100%;
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus, .input-group select:focus {
+  border-color: #00ffff;
+  background: #1c2128;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* --- ACTIVITIES SECTION --- */
+.activities-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-label {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #8b949e;
+  transition: 0.3s;
+}
+
+.checkbox-item input {
+  display: none; /* Hide original checkbox */
+}
+
+.checkbox-item.checked {
+  border-color: #00ffff;
+  color: #00ffff;
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* --- SPECIFICS --- */
+.specifics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(0, 255, 255, 0.03);
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 2px solid #00ffff;
+}
+
+/* --- SUBMIT BUTTON --- */
+.submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #00ffff;
+  color: #000;
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.7);
+  background: #fff;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .input-row {
+    grid-template-columns: 1fr; /* Stack everything on mobile */
+  }
+  .form-card {
+    padding: 20px;
+  }
+}
+
+
+.age-input {
+  max-width: 100px; /* Keeps the age box small */
+}
+
+.submit-btn.loading {
+  background: #333;
+  color: #888;
+  border-color: #555;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Add a simple animation for the specifics appearance */
+.fade-in {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

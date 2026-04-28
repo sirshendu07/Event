@@ -1,0 +1,34 @@
+.hero-container {
+  position: absolute;
+  top: 30px; /* Positions it at the very top */
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.bengali-title {
+  font-size: 3.5rem;
+  color: #fff;
+  font-family: 'Hind Siliguri', sans-serif; /* Standard Bengali font */
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #ba01ff;
+  animation: floatTitle 3s ease-in-out infinite;
+  margin: 0;
+}
+
+.title-underline {
+  height: 2px;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  margin: 5px auto;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+@keyframes floatTitle {
+  0%, 100% { transform: translateY(0); text-shadow: 0 0 10px #00ffff; }
+  50% { transform: translateY(-10px); text-shadow: 0 0 30px #00ffff, 0 0 50px #ba01ff; }
+}
+
+@media (max-width: 768px) {
+  .hero-container { top: 15px; }
+  .bengali-title { font-size: 2.2rem; }
+}

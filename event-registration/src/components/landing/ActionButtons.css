@@ -1,0 +1,47 @@
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.glow-btn {
+  width: 300px; /* Wider for mobile */
+  padding: 22px; /* Thicker */
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 15px; /* Square-ish modern aesthetic */
+  border: none;
+  letter-spacing: 2px;
+  background: rgba(0, 0, 0, 0.8);
+  transition: transform 0.1s;
+}
+
+.glow-btn:active {
+  transform: scale(0.92); /* Stronger feedback for touch */
+}
+
+.register {
+  color: #00ffff;
+  border: 3px solid #00ffff;
+  animation: cyanGlow 2s infinite alternate;
+}
+
+.status {
+  color: #ba01ff;
+  border: 3px solid #ba01ff;
+  animation: purpleGlow 2s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes cyanGlow {
+  from { box-shadow: 0 0 10px #00ffff; }
+  to { box-shadow: 0 0 30px #00ffff, inset 0 0 10px #00ffff; }
+}
+
+@keyframes purpleGlow {
+  from { box-shadow: 0 0 10px #ba01ff; }
+  to { box-shadow: 0 0 30px #ba01ff, inset 0 0 10px #ba01ff; }
+}

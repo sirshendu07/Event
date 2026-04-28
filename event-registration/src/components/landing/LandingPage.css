@@ -1,0 +1,66 @@
+.landing-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* --- DESKTOP BACKGROUND --- */
+  background-image: url('../../assets/image.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  
+  /* THIS MAKES THE IMAGE STILL WHILE SCROLLING */
+  background-attachment: fixed; 
+  
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Darken the bottom significantly so text is readable */
+  background: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 0.1) 0%, 
+    rgba(0, 0, 0, 0.4) 40%, 
+    rgba(0, 0, 0, 0.8) 70%, 
+    #000 100%
+  );
+  z-index: 1;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  /* Extra padding to allow for a "scroll" feel if content is long */
+  padding: 100px 0; 
+}
+
+/* --- MOBILE RESPONSIVE LOGIC --- */
+@media (max-width: 768px) {
+  .landing-wrapper {
+    /* SWAP TO PORTRAIT IMAGE */
+    background-image: url('../../assets/image2.png');
+    
+    /* On some mobile browsers background-attachment: fixed can be buggy, 
+       so we ensure it stays centered and covers the screen */
+    background-position: center top;
+    background-attachment: scroll; /* Better for mobile performance */
+  }
+
+  .landing-content {
+    /* Push the text way down so the poets' faces are fully clear at the top */
+    margin-top: 40vh; 
+    padding-bottom: 50px;
+  }
+}

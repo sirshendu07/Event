@@ -1,0 +1,101 @@
+.success-wrapper {
+  min-height: 100vh;
+  /* Deep radial gradient to match the cosmic poets vibe */
+  background: radial-gradient(circle at center, #1a0033 0%, #05070a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Cinematic Entry Animation for the Card */
+.success-card.glass-morph {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 30px;
+  padding: 45px 25px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 255, 0.1);
+  animation: cinematicEntry 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes cinematicEntry {
+  0% { opacity: 0; transform: scale(0.8) translateY(50px); filter: blur(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+/* Fluctuating Neon Text */
+.fluctuating-neon {
+  color: #fff;
+  letter-spacing: 4px;
+  font-size: 2.2rem;
+  text-shadow: 0 0 10px #00ffff, 0 0 30px #ba01ff;
+  animation: neonFlicker 3s ease-in-out infinite;
+  margin-bottom: 30px;
+}
+
+@keyframes neonFlicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 10px #00ffff, 0 0 30px #ba01ff; }
+  50% { opacity: 0.8; text-shadow: 0 0 20px #00ffff, 0 0 50px #ba01ff; }
+}
+
+/* User Hero Badge */
+.user-hero-badge {
+  background: linear-gradient(90deg, #00ffff, #ba01ff);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 35px;
+  animation: pulseRotate 4s infinite alternate;
+}
+
+@keyframes pulseRotate {
+  from { transform: rotate(-1deg) scale(1); box-shadow: 0 0 15px rgba(0, 255, 255, 0.4); }
+  to { transform: rotate(1deg) scale(1.03); box-shadow: 0 0 30px rgba(186, 1, 255, 0.6); }
+}
+
+.hero-name { color: #000; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin: 0; }
+.hero-age { color: #000; font-size: 0.9rem; font-weight: bold; opacity: 0.8; }
+
+/* Staggered Activity List */
+.activity-breakdown { text-align: left; margin-bottom: 35px; }
+.activity-breakdown h3 { color: #ba01ff; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 15px; }
+
+.activity-row.simplified-output {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  animation: slideInLeft 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.act-type { color: #00ffff; font-weight: 800; font-size: 1rem; }
+.act-val { color: #fff; font-style: italic; font-size: 1rem; }
+
+/* Heartbeat Button */
+.neon-home-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 16px 45px;
+  border-radius: 50px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+  animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+  50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 255, 255, 0.5); border-color: #00ffff; }
+}

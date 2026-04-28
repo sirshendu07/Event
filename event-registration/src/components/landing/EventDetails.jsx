@@ -7,7 +7,7 @@ export default function EventDetails() {
   const events = [
     "Music (গান)", "Dance (নাচ)", "Drama (নাটক)", 
     "Recitation (আবৃত্তি)", "Guitar (গিটার)", 
-    "Singing (সংগীত)", "Stand-up (কৌতুক)"
+     "Others (অন্যান্য)"
   ];
 
   return (

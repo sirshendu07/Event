@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './RegistrationForm.css';
 
 const activitiesList = [
-  "Music", "Dance", "Drama", "Recitation", "Guitar", "Singing", "Stand-up"
+  "Music", "Dance", "Drama", "Recitation", "Guitar", "Others"
 ];
 
 export default function RegistrationForm() {
@@ -29,6 +29,7 @@ export default function RegistrationForm() {
       case 'Guitar': return "Song Name";
       case 'Dance': return "Song Name or Dance Type";
       case 'Drama': return "Drama Name";
+      case 'Recitation': return "Recitation Name";
       default: return "Performance Details";
     }
   };

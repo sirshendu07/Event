@@ -12,9 +12,7 @@ export default function StatusPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/check?tower=${search.tower}&flat=${search.flat}&phone=${search.phone}`
-      );
+      const response = await fetch(`https://event-backend-18wc.onrender.com/api/check?tower=${search.tower}&flat=${search.flat}&phone=${search.phone}`);
       const data = await response.json();
       setResults(data);
     } catch (error) {

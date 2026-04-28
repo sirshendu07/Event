@@ -75,11 +75,11 @@ export default function RegistrationForm() {
     const registrationData = { ...formData, selectedActivities, specifics };
 
     try {
-      const response = await fetch('http://localhost:5000/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(registrationData)
-      });
+     const response = await fetch('https://event-backend-18wc.onrender.com/api/register', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(registrationData)
+});
 
       if (!response.ok) {
           const errorData = await response.json();

@@ -39,5 +39,17 @@ app.get('/api/check', async (req, res) => {
   }
 });
 
+// Add this route to your server/index.js file
+app.get('/api/admin/participants', async (req, res) => {
+  try {
+    // Replace 'User' with whatever your Mongoose Model name is
+    const participants = await User.find({}).sort({ createdAt: -1 }); 
+    res.status(200).json(participants);
+  } catch (error) {
+    console.error("Error fetching participants:", error);
+    res.status(500).json({ message: "Internal Server Error failed to fetch logs" });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
